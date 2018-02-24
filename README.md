@@ -11,15 +11,18 @@ As you all component of BDD (Behavior Drivern Development) are
 So instead of creating runner class & copy pasting the methods in step file, using this project will save few time as it does the same.
 
 ###################
-# Running the jar #
+### Running the jar 
 ###################
 1. Copy the jar where all the feature files are
 2. Double click on the jar 
-3. It will create two folders (Runner -> For runner classes, StepDefinition -> For Step files)
+3. It will create two folders (`Runner` -> For runner classes, `StepDefinition` -> For Step files)
 
 
-NOTE:: There is a folder "Feature" having two feature files, just copy the jar there & run it for having the idea how it works.
+**NOTE::** There is a folder "Feature" having two feature files, just copy the jar there & run it for having the idea how it works.
 
-** Intend of this project is just to demonstrate how we can automate the thing. **
-** Hope you all find it helpful **
-** THANK YOU **
+
+**Intend of this project is just to demonstrate how we can automate the thing.**
+
+**Hope you all find it helpful**
+
+**_THANK YOU_**
