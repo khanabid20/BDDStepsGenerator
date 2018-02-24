@@ -18,7 +18,7 @@ So instead of creating runner class & copy pasting the methods in step file, usi
 3. It will create two folders (Runner -> For runner classes, StepDefinition -> For Step files)
 
 
-
+NOTE:: There is a folder "Feature" having two feature files, just copy the jar there & run it for having the idea how it works.
 
 ** Intend of this project is just to demonstrate how we can automate the thing. **
 ** Hope you all find it helpful **
