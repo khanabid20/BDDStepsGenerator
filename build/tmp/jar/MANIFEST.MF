@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Implementation-Title: BDD Step File Generation from Feature Files
+Implementation-Version: 0.0.1-SNAPSHOT
+Main-Class: com.bdd.autogenerate.runner_stepfiles.main.App
+

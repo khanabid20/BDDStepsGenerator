@@ -1,0 +1,36 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+
+group = 'com.bdd.autogenerate.runner_stepfiles'
+version = '0.0.1-SNAPSHOT'
+
+description = """BDDStepsGenerator"""
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+repositories {
+        
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile 'info.cukes:cucumber-core:1.2.4'
+    compile 'info.cukes:cucumber-java:1.2.4'
+    compile 'info.cukes:cucumber-junit:1.2.4'
+	
+    testCompile 'junit:junit:3.8.1'
+}
+
+// Jar with all dependencies
+tasks.jar{
+	manifest{
+		attributes 'Implementation-Title': 'BDD Step File Generation from Feature Files',
+        	'Implementation-Version': version,
+        	'Main-Class': 'com.bdd.autogenerate.runner_stepfiles.main.App'
+	}
+	from{
+		configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+	}
+}
