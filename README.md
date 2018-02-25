@@ -1,14 +1,11 @@
 # BDDStepsGenerator
 
-#The BDD itself an automation testing framework.
-#Just to automate few things like generating Runner classes & Step files, i have created this project.
-
-As you all component of BDD (Behavior Drivern Development) are 
+As you all know components of BDD (Behavior Drivern Development) are 
 1. Feature file (written in Gherkin language)
-2. Runner class (while running this class, it generates methods for each steps written in feature file)
+2. Runner class (upon running this class, it generates methods for each steps written in feature file)
 3. Lastly the Step file 
 
-So instead of creating runner class & copy pasting the methods in step file, using this project will save few time as it does the same.
+So, instead of creating runner class & copy pasting the methods in step file, we can use this utility to save our time.
 
 ###################
 ### Running the jar 
@@ -23,9 +20,10 @@ So instead of creating runner class & copy pasting the methods in step file, usi
  2. This project contains both pom.xml & build.gradle, so it can be built using maven as well we gradle.
  3. *`mvn [clean] package`* to clean the project & make a jar ; `gradle [clean] jar` will do the same as maven.
 4. There is only one class "App" which has got all the methods for computing the thing.
+5. **Logs** also gets generated, which will help for debugging in case of bad feature file or some error.
 
 
-**Intend of this project is just to demonstrate how we can automate the thing. And utilizes both gradle & maven tools (one can use any of them).**
+**Intend of this project is just to demonstrate how we can automate the thing. And utilizes both gradle & maven build tools (one can use any of them).**
 
 **Hope you all find it helpful**
 
