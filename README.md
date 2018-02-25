@@ -20,8 +20,8 @@ So instead of creating runner class & copy pasting the methods in step file, usi
 
 **NOTE::** 
   1. ThereThere is a folder "Feature" having two feature files, just copy the jar there & run it for having the idea how it works.
-  2. This project contains both pom.xml & build.gradle, so it can be built using maven as well we gradle.
-  3. *`mvn [clean] package`* to clean the project & make a jar ; `gradle [clean] jar` will do the same as maven.
+ 2. This project contains both pom.xml & build.gradle, so it can be built using maven as well we gradle.
+ 3. *`mvn [clean] package`* to clean the project & make a jar ; `gradle [clean] jar` will do the same as maven.
 
 
 **Intend of this project is just to demonstrate how we can automate the thing.**
