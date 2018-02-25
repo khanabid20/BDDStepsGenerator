@@ -19,6 +19,7 @@ dependencies {
     compile 'info.cukes:cucumber-core:1.2.4'
     compile 'info.cukes:cucumber-java:1.2.4'
     compile 'info.cukes:cucumber-junit:1.2.4'
+    compile 'log4j:log4j:1.2.17'
 	
     testCompile 'junit:junit:3.8.1'
 }
