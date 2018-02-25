@@ -24,7 +24,7 @@ So instead of creating runner class & copy pasting the methods in step file, usi
  3. *`mvn [clean] package`* to clean the project & make a jar ; `gradle [clean] jar` will do the same as maven.
 
 
-**Intend of this project is just to demonstrate how we can automate the thing.**
+**Intend of this project is just to demonstrate how we can automate the thing. And utilizes both gradle & maven tools (one can use any of them). **
 
 **Hope you all find it helpful**
 
