@@ -1,6 +1,6 @@
 # BDDStepsGenerator
 
-As you all know components of BDD (Behavior Drivern Development) are 
+As you all know components of BDD (Behavior Driven Development) are 
 1. Feature file (written in Gherkin language)
 2. Runner class (upon running this class, it generates methods for each steps written in feature file)
 3. Lastly the Step file 
@@ -26,5 +26,7 @@ So, instead of creating runner class & copy pasting the methods in step file, we
 **Intend of this project is just to demonstrate how we can automate the thing. And utilizes both gradle & maven build tools (one can use any of them).**
 
 **Hope you all find it helpful**
+
+**Any suggestions would be appreciated**
 
 **_THANK YOU_**
