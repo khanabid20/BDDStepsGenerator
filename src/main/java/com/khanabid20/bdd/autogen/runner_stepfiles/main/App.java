@@ -71,19 +71,8 @@ public class App
 	private static void generateStepFile(String stepFileName) throws IOException {
 
     	new File(STEPDEFINITION_OUTPUT_FOLDER).mkdir();
-		StringBuilder steps = new StringBuilder();
-    	
-/*		String line;
-    	BufferedReader in = new BufferedReader(
-                new InputStreamReader(runRunnerClass(stepFileName)));
-        while ((line = in.readLine()) != null) {
-        	process.destroy();
-			System.out.println(line+"\n");
-			steps.append(line+"\n");
-		}
-        in.close();
-*/
-            	
+	StringBuilder steps = new StringBuilder();
+		
     	// Storing standard output into scanner (Scanner is faster than BufferedReader)
     	Scanner scan = new Scanner(runRunnerClass(stepFileName));
     	while(scan.hasNextLine()){
@@ -132,42 +121,14 @@ public class App
 	 */
 	private static InputStream runRunnerClass(String runner) throws IOException {
 		try {
-			/*
-			 * (second argument >> String runDir)
-			String workingDir = System.getProperty("user.dir") + runDir;
-			System.out.println(workingDir);*/
-			
 			process = Runtime.getRuntime()
 					.exec("cmd /K \"java -cp " + System.getProperty("java.class.path")
 							+ " cucumber.api.cli.Main -m --glue \"stepDefinition\" "+runner+".feature\"");
-/*			
-			process = Runtime.getRuntime()
-					.exec("cmd /K \"cd " + workingDir + " && javac -cp " + System.getProperty("java.class.path") + " "
-							+ runner + "Runner.java && java -cp " + System.getProperty("java.class.path")
-							+ " org.junit.runner.JUnitCore " + runner + "Runner\"");
-*/
-			System.out.println(System.getProperty("user.dir"));
-			System.out.println(System.getProperty("java.class.path"));
-			
-//			process = Runtime.getRuntime()
-//					.exec("javac -cp " + workingDir +" "+ workingDir + "\\*.java && java -cp " + workingDir +" "+ runner + "Runner");
-//			Runtime.getRuntime().exec("cmd cd " + workingDir + " && javac " + runner + "Runner.java && java "
-//					+ runner + "Runner");
-//			System.out.println(runDir);
-		
 		} 
 		catch (Exception e) {
 			System.out.println("Couldn't run Runner class..");
 			e.printStackTrace();
 		}
-//		System.out.println(IOUtils.toString(process.getInputStream()));
-
-//    	Scanner scan = new Scanner(process.getErrorStream());
-//    	while(scan.hasNextLine()){
-//    		log.error(scan.nextLine()+"\n");
-//    	}
-//    	scan.close();
-
 		return process.getInputStream();
 	}
 
