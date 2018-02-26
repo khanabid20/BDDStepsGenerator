@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.bdd.autogenerate.runner_stepfiles</groupId>
+	<groupId>com.khanabid20.bdd.autogen.runner_stepfiles</groupId>
 	<artifactId>BDDStepsGenerator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -41,7 +41,7 @@
 					<!-- MainClass in mainfest make a executable jar -->
 					<archive>
 						<manifest>
-							<mainClass>com.bdd.autogenerate.runner_stepfiles.main.App</mainClass>
+							<mainClass>com.khanabid20.bdd.autogen.runner_stepfiles.main.App</mainClass>
 						</manifest>
 					</archive>
 

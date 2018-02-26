@@ -29,7 +29,7 @@ tasks.jar{
 	manifest{
 		attributes 'Implementation-Title': 'BDD Step File Generation from Feature Files',
         	'Implementation-Version': version,
-        	'Main-Class': 'com.bdd.autogenerate.runner_stepfiles.main.App'
+        	'Main-Class': 'com.khanabid20.bdd.autogen.runner_stepfiles.main.App'
 	}
 	from{
 		configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
