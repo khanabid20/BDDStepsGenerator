@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.io.*;
 
 import org.apache.log4j.Logger;
 
@@ -71,19 +72,28 @@ public class App
 	private static void generateStepFile(String stepFileName) throws IOException {
 
     	new File(STEPDEFINITION_OUTPUT_FOLDER).mkdir();
-	StringBuilder steps = new StringBuilder();
+		StringBuilder steps = new StringBuilder();
 		
+		//using buffer reader as scanner run out of memory
+		String line;             
+		BufferedReader in = new BufferedReader(new InputStreamReader(runRunnerClass(stepFileName)));             
+		while ((line = in.readLine()) != null) {
+			process.destroy();	
+			steps.append(line+"\n");
+		}
+		in.close();
+/*
     	// Storing standard output into scanner (Scanner is faster than BufferedReader)
     	Scanner scan = new Scanner(runRunnerClass(stepFileName));
     	while(scan.hasNextLine()){
-        	process.destroy();		/**important to destroy process, else it haults**/
+        	process.destroy();		//	important to destroy process, else it haults
 //    		String str = scan.nextLine();
 //    		System.out.println(str);
 //    		steps.append(str+"\n");
         	steps.append(scan.nextLine()+"\n");
     	}
     	scan.close();
-    	
+*/	
     	// Handling exception if steps are not generated
     	if(steps.toString().contains("@Given")){
 			String stepFileTemplate = 
@@ -101,7 +111,7 @@ public class App
 		else {
 			log.error("\""+stepFileName + ".feature\" -> Check Feature file for some typing error..");
 			StringBuilder errorString =  new StringBuilder();
-			scan = new Scanner(process.getErrorStream());
+			Scanner scan = new Scanner(process.getErrorStream());
 			while (scan.hasNextLine()) 
 				errorString.append(scan.nextLine()+"\n");	
 			log.error(errorString.toString().substring(errorString.toString().lastIndexOf("Caused")));
