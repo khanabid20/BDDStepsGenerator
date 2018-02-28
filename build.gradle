@@ -31,7 +31,11 @@ tasks.jar{
         	'Implementation-Version': version,
         	'Main-Class': 'com.khanabid20.bdd.autogen.runner_stepfiles.main.App'
 	}
+	
 	from{
 		configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
 	}
+	//from tasks.javadoc.outputs.files  // both below & this works
+	//from tasks.javadoc.outputs  		// but copies everything in the root of the jar
+	from docsDir		// copies docs directory itself
 }

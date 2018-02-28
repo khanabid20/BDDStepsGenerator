@@ -25,6 +25,12 @@ public class App
 	
 	static Process process = null;
 	
+	/**
+	 * This is the entry point of the project
+	 * 
+	 * @param args Command line arguments (here no need to pass any)
+	 * @throws IOException Throws IO exception when unable to scan the directory.
+	 */
     public static void main( String[] args ) throws IOException
     {
     	log.info("Seraching for all .feature file");
@@ -37,13 +43,13 @@ public class App
     
     
     /**
-     * This method takes feature file name as and generates runner class for the same,
+     * This method takes feature file name and generates runner class for the same,
      * runner template is stored in a string variable for later appending in the runner class file
      * 
-     * @param file
-     * @throws IOException
+     * @param file Feature file name
+     * @throws IOException Unable to create runner java file exception.
      */
-    private static void generateRunner(String file) throws IOException {
+    public static void generateRunner(String file) throws IOException {
 
     	new File("."+RUNNER_CLASS_OUTPUT_FOLDER).mkdir();
     	String runnerTemplate =
@@ -66,10 +72,10 @@ public class App
     /**
      * This method generates the step file, also got the template declared as string variable
      * 
-     * @param stepFileName
-     * @throws IOException
+     * @param stepFileName Step file name (clipped from feature file name)
+     * @throws IOException Exception for unable to create step java file.
      */
-	private static void generateStepFile(String stepFileName) throws IOException {
+	public static void generateStepFile(String stepFileName) throws IOException {
 
     	new File(STEPDEFINITION_OUTPUT_FOLDER).mkdir();
 		StringBuilder steps = new StringBuilder();
@@ -122,14 +128,14 @@ public class App
 
 	
 	/**
-	 * This method is for compiling java class & running the generated class file 
+	 * This method is for compiling java class and running the generated class file 
 	 * and returns the console output as InputStream to the Caller function
 	 * 
-	 * @param runner
-	 * @return
-	 * @throws IOException
+	 * @param runner Runner class name
+	 * @return Returns input stream of exec() command
+	 * @throws IOException IO exception for Runtime process.
 	 */
-	private static InputStream runRunnerClass(String runner) throws IOException {
+	public static InputStream runRunnerClass(String runner) throws IOException {
 		try {
 			process = Runtime.getRuntime()
 					.exec("cmd /K \"java -cp " + System.getProperty("java.class.path")
@@ -144,13 +150,13 @@ public class App
 
 	/**
 	 * 
-	 * This method search the current directory for all .feature files & store the name in a list of string 
+	 * This method search the current directory for all .feature files and store the name in a list of string 
 	 * and returns the same
 	 * 
-	 * @param fileDir
-	 * @return
+	 * @param fileDir Directory path [will be the dir where this jar is]
+	 * @return This returns list feature file names as string
 	 */
-	static List<String> searchFeatureFiles(File fileDir){
+	public static List<String> searchFeatureFiles(File fileDir){
     	List<String> fileNames = new ArrayList<String>();
 		for(File file: fileDir.listFiles()){
 			if((!file.isDirectory())&&file.getName().endsWith(".feature")){
