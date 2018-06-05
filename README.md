@@ -23,7 +23,7 @@ So, instead of creating runner class & copy pasting the methods in step file, we
 5. **Logs** also gets generated, which will help for debugging in case of bad feature file or some error.
 
 
-**Intend of this project is just to demonstrate how we can automate the thing. And utilizes both gradle & maven build tools (one can use any of them).**
+**Intent of this project is just to demonstrate how we can automate the thing. And utilizes both gradle & maven build tools (one can use any of them).**
 
 **Hope you all find it helpful**
 
